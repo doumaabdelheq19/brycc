@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
-use App\Models\Card;
+use App\Models\card;
 use Illuminate\View\View;
   
 class searchcontroller extends Controller

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
  
 use App\Models\User;
-use App\Models\Card;
+use App\Models\card;
  
 use Carbon\Carbon;
  

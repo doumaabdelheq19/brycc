@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 
-use App\Models\Card;
+use App\Models\card;
 use App\Http\Requests\StoreCardRequest;
 use App\Http\Requests\UpdateCardRequest;
 use Illuminate\Support\Str;
