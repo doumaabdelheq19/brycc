@@ -341,7 +341,7 @@ if (!event.target.matches('.dropbtn')) {
 
    
   $cods=DB::table('cards')
-      ->where('id', $course_id)
+      ->where('id', $card)
       ->get();?>
        @foreach ($cods as $cod)
        <?php 
