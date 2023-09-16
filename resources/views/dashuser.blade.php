@@ -412,7 +412,7 @@ if (!event.target.matches('.dropbtn')) {
                             <td>{{$cor->Amount}}{{$cor->Amountunit}}</td>
                             <td>{{$cor->views}}</td>
                             <td><a href="{{Route('card.edit',$cor->id)}}">Edit</a></td>
-                            <td><a href="{{ route('delete.row', ['id' => $row->id]) }}" onclick="return confirm('Are you sure you want to delete this row?')" style="color: red">Delete</a></form></td>
+                            <td><a href="{{ route('delete.row', ['id' => $cor->id]) }}" onclick="return confirm('Are you sure you want to delete this row?')" style="color: red">Delete</a></form></td>
                            
                             
                         </tr>
