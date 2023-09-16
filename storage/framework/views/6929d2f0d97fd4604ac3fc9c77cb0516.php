@@ -38,12 +38,15 @@
           <a href="<?php echo e(url('')); ?>"><img src="./Imeges/Brecycler2 Chosen-02 (1).png" alt="" /></a>
 
         </div>
+        <form method="POST" action="<?php echo e(route('search.results')); ?>" class="dooum">
+          <?php echo csrf_field(); ?>
         <div class="search">
-          <input id="Search" type="text" placeholder="Search" />
-          <button>
+          <input id="Search" type="text" name="query" placeholder="Search" />
+          <button type="submit" >
             <i class="fa-sharp fa-solid fa-magnifying-glass"></i>Search
           </button>
         </div>
+        </form>
         <div class="left-Icons">
           <i id="fa-magnifying-glass" class="fa-sharp fa-solid fa-magnifying-glass"></i>
           <a href="<?php echo e(route('card.create')); ?>"> <i class="fa-solid fa-plus"></i></a>
@@ -334,7 +337,7 @@ window.onclick = function(event) {
       </ul>
     </nav>
   </section>
-    <div class="py-12" style="margin-top: 90px; text-align:center;">
+    <div class="py-12" style="margin-top: 90px; ">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6" >
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg" style="margin: 50px; FONT-SIZE: 20px;"  >
                 <div class="max-w-xl">

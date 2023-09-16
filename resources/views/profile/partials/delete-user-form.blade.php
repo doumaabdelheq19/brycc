@@ -9,13 +9,15 @@
         </p>
     </header>
 
-    <x-danger-button style="    padding: 10px;
-    WIDTH: 120px;
+    <x-danger-button style="    font-weight: bold;
+    line-height: 19px;
+    background: red;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 6px;
     color: white;
-    background-color: red;
-    border-radius: 15px;
-    font-size: 20px;
-    margin-top: 30px;"
+    width: auto;
+    margin-top: 24px;"
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
     >{{ __('Delete Account') }}</x-danger-button>
@@ -52,7 +54,15 @@
                     {{ __('Cancel') }}
                 </x-secondary-button>
 
-                <x-danger-button  class="ml-3">
+                <x-danger-button style="font-weight: bold;
+                line-height: 19px;
+                background: #5850eb;
+                border: none;
+                padding: 15px 25px;
+                border-radius: 6px;
+                color: white;
+                width: auto;
+                margin-top: 24px;"  class="ml-3">
                     {{ __('Delete Account') }}
                 </x-danger-button>
             </div>

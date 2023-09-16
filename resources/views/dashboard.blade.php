@@ -59,7 +59,7 @@ if (openDropdown.classList.contains('show')) {
           <a href="{{url('')}}"><img src="./Imeges/Brecycler2 Chosen-02 (1).png" alt="" /></a>
   
         </div>
-        <form method="POST" action="{{ route('search.results') }}">
+        <form method="POST" action="{{ route('search.results') }}" class="dooum">
           @csrf
         <div class="search">
           <input id="Search" type="text" name="query" placeholder="Search" />

@@ -97,7 +97,7 @@ productImgsContainer.forEach((box, i) => {
   });
 });
 // search
-let searchInput = document.querySelectorAll(".nav .container .search input");
+let searchInput = document.querySelectorAll(".nav .container .dooum .search input");
 let submitBtns = document.querySelectorAll(".nav .recomendation form .btn .cancel");
 let submitBtn = document.querySelectorAll(".nav .recomendation form .btn");
 let searchIcon = document.querySelectorAll(

@@ -12,26 +12,30 @@
     </header>
 
     <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.danger-button','data' => ['style' => '    padding: 10px;
-    WIDTH: 120px;
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.danger-button','data' => ['style' => '    font-weight: bold;
+    line-height: 19px;
+    background: red;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 6px;
     color: white;
-    background-color: red;
-    border-radius: 15px;
-    font-size: 20px;
-    margin-top: 30px;','xData' => '','xOn:click.prevent' => '$dispatch(\'open-modal\', \'confirm-user-deletion\')']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+    width: auto;
+    margin-top: 24px;','xData' => '','xOn:click.prevent' => '$dispatch(\'open-modal\', \'confirm-user-deletion\')']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('danger-button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['style' => '    padding: 10px;
-    WIDTH: 120px;
+<?php $component->withAttributes(['style' => '    font-weight: bold;
+    line-height: 19px;
+    background: red;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 6px;
     color: white;
-    background-color: red;
-    border-radius: 15px;
-    font-size: 20px;
-    margin-top: 30px;','x-data' => '','x-on:click.prevent' => '$dispatch(\'open-modal\', \'confirm-user-deletion\')']); ?><?php echo e(__('Delete Account')); ?> <?php echo $__env->renderComponent(); ?>
+    width: auto;
+    margin-top: 24px;','x-data' => '','x-on:click.prevent' => '$dispatch(\'open-modal\', \'confirm-user-deletion\')']); ?><?php echo e(__('Delete Account')); ?> <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__componentOriginal71c6471fa76ce19017edc287b6f4508c)): ?>
 <?php $component = $__componentOriginal71c6471fa76ce19017edc287b6f4508c; ?>
@@ -131,14 +135,30 @@
 <?php endif; ?>
 
                 <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.danger-button','data' => ['class' => 'ml-3']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.danger-button','data' => ['style' => 'font-weight: bold;
+                line-height: 19px;
+                background: #5850eb;
+                border: none;
+                padding: 15px 25px;
+                border-radius: 6px;
+                color: white;
+                width: auto;
+                margin-top: 24px;','class' => 'ml-3']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('danger-button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => 'ml-3']); ?>
+<?php $component->withAttributes(['style' => 'font-weight: bold;
+                line-height: 19px;
+                background: #5850eb;
+                border: none;
+                padding: 15px 25px;
+                border-radius: 6px;
+                color: white;
+                width: auto;
+                margin-top: 24px;','class' => 'ml-3']); ?>
                     <?php echo e(__('Delete Account')); ?>
 
                  <?php echo $__env->renderComponent(); ?>

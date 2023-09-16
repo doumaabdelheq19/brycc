@@ -36,7 +36,7 @@
         <a href="<?php echo e(url('')); ?>"><img src="../Imeges/Brecycler2 Chosen-02 (1).png" alt="" /></a>
 
       </div>
-      <form method="POST" action="<?php echo e(route('search.results')); ?>">
+      <form method="POST" action="<?php echo e(route('search.results')); ?>" class="dooum">
         <?php echo csrf_field(); ?>
       <div class="search">
         <input id="Search" type="text" name="query" placeholder="Search" />
@@ -420,7 +420,7 @@ if (!event.target.matches('.dropbtn')) {
                 ->get();
                 ?>
                 <?php $__currentLoopData = $recoms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $recom): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <a class="box" href="./product.html">
+        <a class="box" href="<?php echo e(url('papca' , $recom->id)); ?>">
           <img src="<?php echo e(asset('/storage/'.$recom->attachement)); ?>" alt="" />
 
           <!-- <i class="fa-solid fa-heart fully"></i>

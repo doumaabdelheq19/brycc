@@ -129,13 +129,13 @@
     background-color:var(--mainHoverColor);
     color: var(--darkModeColor);
   }
-  .nav .container > .search {
+  .nav .container > .dooum .search {
     position: relative;
-    width: 30%;
+    
     display: none;
     text-align: center;
   }
-  .nav .container .search input {
+  .nav .container .dooum .search input {
     padding: 10px 30px;
     width: 100%;
     background-color: #c3c3c3;
@@ -147,7 +147,7 @@
     font-size: 17px;
   }
   @media (min-width: 991px) {
-    .nav .container .search {
+    .nav .container .dooum .search {
       display: block;
     }
   }
@@ -260,10 +260,10 @@
   .nav .recomendation button i {
     font-size: 17px;
   }
-  .nav .container .search button {
+  .nav .container .dooum .search button {
     position: absolute;
     
-    padding: 25px 35px;
+   width: 120px;
     top: 50%;
     transform: translateY(-50%);
     transition: var(--mainTrantion);
@@ -294,10 +294,10 @@
   .nav .recomendation form .btn .cancel {
     background-color: #383838;
   }
-  .nav .container .search button i {
+  .nav .container .dooum .search button i {
     margin-right: 5px;
   }
-  .nav .container .search input:focus {
+  .nav .container .dooum .search input:focus {
     color: #333;
   }
   

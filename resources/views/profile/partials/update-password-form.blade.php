@@ -20,7 +20,7 @@
         </div>
 
         <div>
-            <x-input-label for="password" :value="__('New Password')" />
+            <x-input-label for="password" :value="__('New Password')" style="margin-right: 24px" />
             <x-text-input id="password" style="padding: 4px; margin:12px; font-size:20px; width:350px" name="password" type="password" class="mt-1 block w-full" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
         </div>
@@ -32,13 +32,15 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button style="    padding: 10px;
-            WIDTH: 120px;
+            <x-primary-button style="        font-weight: bold;
+            line-height: 19px;
+            background: #0f944b;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 6px;
             color: white;
-            background-color: var(--mainColor);
-            border-radius: 15px;
-            font-size: 20px;
-            margin-top: 30px;">{{ __('Save') }}</x-primary-button>
+            width: auto;
+            margin-top: 24px;">{{ __('Save Password') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
                 <p

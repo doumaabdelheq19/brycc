@@ -57,7 +57,7 @@ if (openDropdown.classList.contains('show')) {
           <a href="<?php echo e(url('')); ?>"><img src="./Imeges/Brecycler2 Chosen-02 (1).png" alt="" /></a>
 
         </div>
-        <form method="POST" action="<?php echo e(route('search.results')); ?>">
+        <form method="POST" action="<?php echo e(route('search.results')); ?>" class="dooum">
           <?php echo csrf_field(); ?>
         <div class="search">
           <input id="Search" type="text" name="query" placeholder="Search" />

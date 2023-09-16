@@ -36,7 +36,7 @@
         <a href="{{url('')}}"><img src="../Imeges/Brecycler2 Chosen-02 (1).png" alt="" /></a>
 
       </div>
-      <form method="POST" action="{{ route('search.results') }}">
+      <form method="POST" action="{{ route('search.results') }}" class="dooum">
         @csrf
       <div class="search">
         <input id="Search" type="text" name="query" placeholder="Search" />
@@ -420,7 +420,7 @@ if (!event.target.matches('.dropbtn')) {
                 ->get();
                 ?>
                 @foreach ($recoms as $recom)
-        <a class="box" href="./product.html">
+        <a class="box" href="{{url('papca' , $recom->id)}}">
           <img src="{{asset('/storage/'.$recom->attachement) }}" alt="" />
 
           <!-- <i class="fa-solid fa-heart fully"></i>

@@ -92,7 +92,7 @@ class CardController extends Controller
     
         
 
-        return response()->redirectToRoute('card.index');
+        return response()->redirectToRoute('dashboard',);
     }
 
     /**
