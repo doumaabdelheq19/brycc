@@ -109,7 +109,7 @@ class CardController extends Controller
      */
     public function edit(Card $card)
     {
-       return view('card.edit',compact('card'));
+       return view('categories.papca',compact('card'));
     }
 
     /**
