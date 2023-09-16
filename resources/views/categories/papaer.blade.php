@@ -19,7 +19,7 @@ x<!DOCTYPE html>
     href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Jomhuria&family=Open+Sans:ital,wght@0,300;0,500;0,700;0,800;1,400;1,800&family=Poppins:ital,wght@0,200;0,500;0,700;0,800;1,100;1,300&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100;0,300;0,400;0,500;1,500;1,700;1,900&display=swap"
     rel="stylesheet" />
   <title>{{$course_id}}</title>
-  <link rel="icon" href="../Imeges/chemical-reaction.png">
+  <link rel="icon" href="/Imeges/chemical-reaction.png">
   <script src="{{asset('js/main.js')}}" defer></script>
   </style>
   
@@ -29,7 +29,7 @@ x<!DOCTYPE html>
     <div class="container">
       <div class="logo">
         <i class="fa-solid fa-bars" id="fa-bars"></i>
-        <a href="{{url('')}}"><img src="./Imeges/Brecycler2 Chosen-02 (1).png" alt="" /></a>
+        <a href="{{url('')}}"><img src="../Imeges/Brecycler2 Chosen-02 (1).png" alt="" /></a>
 
       </div>
       <form method="POST" action="{{ route('search.results') }}">
