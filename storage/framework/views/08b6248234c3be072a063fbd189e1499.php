@@ -42,7 +42,7 @@
   </style>
   
 </head>
-section class="navabr">
+<section class="navabr">
   <nav class="nav">
     <div class="container">
       <div class="logo">
@@ -239,42 +239,6 @@ if (!event.target.matches('.dropbtn')) {
     </div>
     
   </nav>
-</section>
-<section class="cards">
-    <div class="container">
-        <h2><i class="fa-solid fa-vial"></i> <?php echo e($course_id); ?> </h2>
-      <div class="contr">
-       
-        <?php 
-       
-        $cods=DB::table('cards')
-            ->where('category', $course_id)
-            ->get();?>
-        <?php $__currentLoopData = $cods; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cod): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <a class="box" href="<?php echo e(route('card.edit', $cod->id)); ?>">
-            <div class="image">
-                <img src="<?php echo e(asset('/storage/'.$cod->attachement)); ?>" alt="">
-            </div>
-            <div class="info">
-                <h3 class="title"><?php echo e($cod->title); ?></h3>
-                <p><?php echo e($cod->description); ?></p>
-                <h4><?php echo e($cod->currency); ?><?php echo e($cod->price); ?></h4>
-            </div>
-          <div class="footer">
-            <img src="../Imeges/<?php echo e($cod->country); ?>.png" alt="">
-            <div class="rating">
-              <span>(4.4) </span>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <button class="more">
-              More
-            </button>
-          </div>
-        </a>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        
-      </div>
-    </div>
 </section>
 <section class="cards">
     <div class="container">
