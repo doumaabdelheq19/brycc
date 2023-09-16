@@ -342,7 +342,7 @@ if (!event.target.matches('.dropbtn')) {
             ->where('category', $course_id)
             ->get();?>
         @foreach ($cods as $cod)
-          <a class="box" href="{{route('card.indext', $cod->id)}}">
+          <a class="box" href="{{route('card.index', $cod->id)}}">
             <div class="image">
                 <img src="{{asset('/storage/'.$cod->attachement) }}" alt="">
             </div>
