@@ -125,10 +125,19 @@ class CardController extends Controller
     /**
      * Remove the specified resource from storage.
      */ 
-    public function destroy(Card $card)
+    public function destroy( $id)
     {
-        $card->delete();
-       return redirect(route('card.index'));
+        $row = Card::find($id);
+
+        // Check if the row exists
+        if (!$row) {
+            return redirect()->back()->with('error', 'Row not found.');
+        }
+    
+        // Delete the row
+        $row->delete();
+    
+        return redirect()->back()->with('success', 'Row deleted successfully.');
     }
 
  

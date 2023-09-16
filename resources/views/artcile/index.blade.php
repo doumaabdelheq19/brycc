@@ -23,20 +23,29 @@
 <nav>
     <div class="containerr">
         <div class="logo">
-            <a href="../index.html"><img src="images/green-logo.png" alt=""></a>
+            <a href="{{url('')}}"><img src="{{asset('Imeges/Brecycler2 Chosen-02 (1).png')}}" alt="" /></a>
         </div>
         <ul class="links">
+            @if (auth()->user()->isAdmin)
             <li><a href="{{route('artcile.create')}}">Add Articles</a></li>
-            <li><a href="">Articles</a></li>
-            <li><a href="">Contact Us</a></li>
-            <li><a href="../index.html">Home</a></li>
+       
+       
+        @endif
+            <li><a href="{{route('artcile.index')}}">Articles</a></li>
+            <li><a href="{{Url('/contactus')}}">Contact Us</a></li>
+            <li><a href="{{url('')}}">Home</a></li>
         </ul>
         <i class="fa-solid fa-bars menu-bar">
             <ul class="mobile-links">
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="{{url('')}}">Home</a></li>
+                @if (auth()->user()->isAdmin)
                 <li><a href="{{route('artcile.create')}}">Add Articles</a></li>
-                <li><a href="">Articles</a></li>
-                <li><a href="../contactUs.html">Contact Us</a></li>
+           
+           
+            @endif
+                
+                <li><a href="{{route('artcile.index')}}">Articles</a></li>
+                <li><a href="{{Url('/contactus')}}">Contact Us</a></li>
             </ul>
         </i>
     </div>

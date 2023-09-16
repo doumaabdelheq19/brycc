@@ -80,6 +80,7 @@ require __DIR__.'/auth.php';
 Route::middleware('auth')->prefix(('card'))->group(function () {
     Route:: resource('card',CardController::class); 
     // Route::get('/card/create',[CardController::class,'create'])->name('ticket.create');
+    Route::get('/delete/{id}', [CardController::class,'destroy'])->name('delete.row');
     //  Route::post('/card/create',[CardController::class,'store '])->name('ticket.store');
     
 });

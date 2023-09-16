@@ -19,20 +19,28 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="images/green-logo.png" alt="">
+            <a href="{{url('')}}"><img src="{{asset('Imeges/Brecycler2 Chosen-02 (1).png')}}" alt="" /></a>
         </div>
         <ul class="links">
-            <li><a href="./index.html">Add Articles</a></li>
+            @if (auth()->user()->isAdmin)
+            <li><a href="{{route('artcile.create')}}">Add Articles</a></li>
+       
+       
+        @endif
             <li><a href="./articlesAdmin.html">Articles</a></li>
-            <li><a href="../contactUs.html">Contact Us</a></li>
-            <li><a href="../Sign up.html">Sign Up</a></li>
+            <li><a href="{{Url('/contactus')}}">Contact Us</a></li>
+            <li><a href="{{route('register')}}">Sign Up</a></li>
         </ul>
         <i class="fa-solid fa-bars menu-bar">
             <ul class="mobile-links">
-                <li><a href="">Add Articles</a></li>
-                <li><a href="">Articles</a></li>    
-                <li><a href="">Contact Us</a></li>
-                <li><a href="">Sign Up</a></li>
+                @if (auth()->user()->isAdmin)
+                <li><a href="{{route('artcile.create')}}">Add Articles</a></li>
+           
+           
+            @endif
+                <li><a href="{{route('artcile.index')}}">Articles</a></li>    
+                <li><a href="{{Url('/contactus')}}">Contact Us</a></li>
+                <li><a href="{{route('register')}}">Sign Up</a></li>
             </ul>
         </i>
     </nav>
@@ -43,9 +51,9 @@
                     <h2>Lorem ipsum dolor sit amet consectetur.</h2>
                 </div>
                 <ul class="links">
-                    <li><a href="">Home</a></li>
+                    <li><a href="{{url('')}}">Home</a></li>
                     <li>/</li>
-                    <li><a href="articlesAdmin.html">Articles</a></li>
+                    <li><a href="{{route('artcile.index')}}">Articles</a></li>
                     <li>/</li>
                     <li><a href="">Lorem ipsum dolor sit amet consectetur.</a></li>
                 </ul>
@@ -57,7 +65,7 @@
                 <div class="info">
                     <h1>{{$artcile->title}}</h1>
                     <p>{{$artcile->descrip}}</p>
-                    <a href="articlesAdmin.html">Back</a>
+                    <a href="{{route('artcile.index')}}">Back</a>
                 </div>
             </div>
     </div>

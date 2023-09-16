@@ -23,20 +23,29 @@
 <nav>
     <div class="containerr">
         <div class="logo">
-            <a href="../index.html"><img src="images/green-logo.png" alt=""></a>
+            <a href="<?php echo e(url('')); ?>"><img src="<?php echo e(asset('Imeges/Brecycler2 Chosen-02 (1).png')); ?>" alt="" /></a>
         </div>
         <ul class="links">
+            <?php if(auth()->user()->isAdmin): ?>
             <li><a href="<?php echo e(route('artcile.create')); ?>">Add Articles</a></li>
-            <li><a href="">Articles</a></li>
-            <li><a href="">Contact Us</a></li>
-            <li><a href="../index.html">Home</a></li>
+       
+       
+        <?php endif; ?>
+            <li><a href="<?php echo e(route('artcile.index')); ?>">Articles</a></li>
+            <li><a href="<?php echo e(Url('/contactus')); ?>">Contact Us</a></li>
+            <li><a href="<?php echo e(url('')); ?>">Home</a></li>
         </ul>
         <i class="fa-solid fa-bars menu-bar">
             <ul class="mobile-links">
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="<?php echo e(url('')); ?>">Home</a></li>
+                <?php if(auth()->user()->isAdmin): ?>
                 <li><a href="<?php echo e(route('artcile.create')); ?>">Add Articles</a></li>
-                <li><a href="">Articles</a></li>
-                <li><a href="../contactUs.html">Contact Us</a></li>
+           
+           
+            <?php endif; ?>
+                
+                <li><a href="<?php echo e(route('artcile.index')); ?>">Articles</a></li>
+                <li><a href="<?php echo e(Url('/contactus')); ?>">Contact Us</a></li>
             </ul>
         </i>
     </div>

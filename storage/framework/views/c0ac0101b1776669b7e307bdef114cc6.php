@@ -122,7 +122,7 @@
           <div class="input-box">
             <input class="openAlert" type="submit" value="Submit" data-name="contact">
           </div>
-          <a href="./log in.html" class="alreadyHaveAco">already have an account</a>
+          <a href="<?php echo e(route('login')); ?>" class="alreadyHaveAco">already have an account</a>
         </form>
       </div>
       </div>
@@ -137,7 +137,8 @@
                     data: $(this).serialize(),
                     success: function (response) {
                         // Handle successful registration
-                        window.location.href = '/dashboard';
+                       
+                        location.reload() ;
                     },
                     error: function (xhr) {
                         if (xhr.status === 422) {
@@ -151,8 +152,8 @@
     
                             alert('Validation errors:\n\n' + errorMessage);
                         } else {
-                            // Handle other errors
-                            alert('An error occurred. Please try again later.');
+                          location.reload() ;
+                           
                         }
                     }
                 });

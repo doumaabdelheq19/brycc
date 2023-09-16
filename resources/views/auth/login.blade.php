@@ -54,7 +54,7 @@
             <input class="openAlert" type="submit" value="Submit" data-name="contact">
           </div>
 
-          <a href="./log in.html" class="alreadyHaveAco">already have an account</a>
+          <a href="{{ route('register') }}" class="alreadyHaveAco">Create an account</a>
           <a href="forgot-password" class="alreadyHaveAco">Forgot password ?</a>
         </form>
       </div>
