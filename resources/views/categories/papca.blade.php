@@ -28,7 +28,7 @@
 
 <body>
 
-  section class="navabr">
+  <section class="navabr">
   <nav class="nav">
     <div class="container">
       <div class="logo">
@@ -341,7 +341,7 @@ if (!event.target.matches('.dropbtn')) {
 
    
   $cods=DB::table('cards')
-      ->where('id', $card)
+      ->where('id', $course_id)
       ->get();?>
        @foreach ($cods as $cod)
        <?php 
