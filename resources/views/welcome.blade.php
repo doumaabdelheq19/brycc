@@ -239,7 +239,7 @@ window.onclick = function(event) {
                   Mode </a>
               </li>
               <li>
-                <i class="fa-solid fa-user-plus"></i> <a href="./Sign up.html">register</a>
+                <i class="fa-solid fa-user-plus"></i> <a href="{{ route('register') }}">register</a>
               </li>
               <li>
                 <i class="fa-solid fa-plus"></i>
