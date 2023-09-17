@@ -341,6 +341,11 @@ if (!event.target.matches('.dropbtn')) {
         $cods=DB::table('cards')
             ->where('category', $course_id)
             ->get();?>
+             @if($cods->isEmpty())
+      <div style="text-align: center; margin-top:40px; width:100%" > <p style="font-size: 25px">No results found.</p></div>
+             
+         @else
+            
         @foreach ($cods as $cod)
           <a class="box" href="{{url('papca' , $cod->id)}}">
             <div class="image">
@@ -363,7 +368,7 @@ if (!event.target.matches('.dropbtn')) {
           </div>
         </a>
         @endforeach
-        
+        @endif
       </div>
     </div>
 </section>
