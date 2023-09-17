@@ -57,7 +57,39 @@
     
    
     
+      <script>
+        $(document).ready(function () {
+            $('#registration-form').on('submit', function (e) {
+                e.preventDefault();
     
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        // Handle successful registration
+                        alert("A link was sent to your email to reset your password");
+                    },
+                    error: function (xhr) {
+                        if (xhr.status === 422) {
+                            // Validation errors
+                            var errors = xhr.responseJSON.errors;
+    
+                            var errorMessage = '';
+                            for (var key in errors) {
+                                errorMessage += errors[key].join('\n') + '\n';
+                            }
+    
+                            alert("Email or password is incorrect");
+                        } else {
+                            // Handle other errors
+                            alert('An error occurred. Please try again later.');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
     
     
 </body>
