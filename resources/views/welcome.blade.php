@@ -176,7 +176,7 @@ if (openDropdown.classList.contains('show')) {
       right: 6%;" action="{{ route('search.results') }}" id="myDropdown1" class="doouma">
         @csrf
       <div class="search">
-        <a  onClick="myFunction2()" > <i class="fa-solid fa-xmark" style="font-size: 26px;"></i></a>
+        <a  onClick="myFunction2()" > <i class="fa-solid fa-xmark" style="font-size: 26px; color:black; padding:12px;"></i></a>
         <input id="Search" type="text" name="query" placeholder="Search" style="    width: 80%;
         background-color: white;
         outline: none;
