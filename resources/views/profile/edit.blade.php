@@ -26,10 +26,64 @@
 </head>
 
 <body>
+    <script>
+    function myFunction() {
+      if (document.getElementById("myDropdown").style.display === "none"){
+document.getElementById("myDropdown").style.display = 'block';}
+else {
+document.getElementById("myDropdown").style.display = 'none';}
+
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+if (!event.target.matches('.dropbtn')) {
+var dropdowns = document.getElementsByClassName("dropdown-content");
+var i;
+for (i = 0; i < dropdowns.length; i++) {
+var openDropdown = dropdowns[i];
+if (openDropdown.classList.contains('show')) {
+  openDropdown.classList.remove('show');
+}
+}
+}}
+
+function myFunction1() {
+      if (document.getElementById("myDropdown1").style.display === "none"){
+document.getElementById("myDropdown1").style.display = 'block';}
+else {
+document.getElementById("myDropdown1").style.display = 'none';}
+
+}
+function myFunction2() {
+      if (document.getElementById("myDropdown1").style.display === "block"){
+document.getElementById("myDropdown1").style.display = 'none';}
+else {
+document.getElementById("myDropdown1").style.display = 'block';}
+
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+if (!event.target.matches('.drpbttn')) {
+var dropdowns = document.getElementsByClassName("doouma");
+var i;
+for (i = 0; i < dropdowns.length; i++) {
+var openDropdown = dropdowns[i];
+if (openDropdown.classList.contains('show')) {
+  openDropdown.classList.remove('show');
+}
+}
+}
+
+} 
+
+
+
+</script>
   <div class="scrollUp">
     <i class="fa-solid fa-up-long"></i>
   </div>
-
   <section class="navabr">
     <nav class="nav">
       <div class="container">
@@ -38,7 +92,7 @@
           <a href="{{url('')}}"><img src="./Imeges/Brecycler2 Chosen-02 (1).png" alt="" /></a>
 
         </div>
-        <form method="POST" action="{{ route('search.results') }}" class="dooum">
+        <form method="POST" action="{{ route('search.results') }}"  class="dooum">
           @csrf
         <div class="search">
           <input id="Search" type="text" name="query" placeholder="Search" />
@@ -47,8 +101,11 @@
           </button>
         </div>
         </form>
+      
+        
         <div class="left-Icons">
-          <i id="fa-magnifying-glass" class="fa-sharp fa-solid fa-magnifying-glass"></i>
+         
+          <a  onClick="myFunction1()" class="drpbttn"> <i id="fa-magnifying-glass"   class="fa-sharp fa-solid fa-magnifying-glass"></i></a>
           <a href="{{route('card.create')}}"> <i class="fa-solid fa-plus"></i></a>
           <!-- <i class="fa-solid fa-cart-shopping"></i> -->
          
@@ -111,7 +168,39 @@
   </a>
       
       @endif
-          
+      <form method="POST" style="display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px;
+      z-index: 1;
+      width: 93%;
+      top: 1%;
+      right: 6%;" action="{{ route('search.results') }}" id="myDropdown1" class="doouma">
+        @csrf
+      <div class="search">
+        <a  onClick="myFunction2()" > <i class="fa-solid fa-xmark" style="font-size: 26px;"></i></a>
+        <input id="Search" type="text" name="query" placeholder="Search" style="    width: 80%;
+        background-color: white;
+        outline: none;
+        caret-color: var(--mainColor);
+        border: none;
+        font-size: 20px;
+        padding-left: 12px;
+        height: 70px;" />
+        <button type="submit" style="        position: absolute;
+        width: 20%;
+        height: 70px;
+        transform: translateY(-50%);
+        transition: var(--mainTrantion);
+        border: none;
+        color: white;
+        background-color: var(--mainColor);
+        top: 50%;" >
+          <i class="fa-sharp fa-solid fa-magnifying-glass" style="    font-size: 18px;
+        "></i>
+        </button>
+      </div>
+      </form>
          
           <script>
           function myFunction() {
@@ -169,63 +258,63 @@ window.onclick = function(event) {
                 <li>frensh</li>
                 <li>arabic</li>
               </ul> -->
-            <ul class="prob">
-              <li>categories</li>
-              <li>
-                <i class="fa-sharp fa-solid fa-book"></i>
-                <a href="./categories pages/Paper.html"> Paper </a>
-              </li>
-              <li>
-                <i class="fa-solid fa-vial"></i>
-                <a href="./categories pages/chimical.html"> chimical substances </a>
-              </li>
-              <li>
-                <i class="fa-solid fa-flask"></i>
-                <a href="./categories pages/plastic.html">plastic</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-hammer"></i>
-                <a href="./categories pages/Metal.html">Metal </a>
-              </li>
-              <li>
-                <i class="fa-solid fa-laptop"></i><a href="./categories pages/Electronics.html">Electronics </a>
-              </li>
-              <li>
-                <i class="fa-solid fa-filter"></i><a href="./categories pages/Wood.html">Rubber</a>
-              </li>
-              <li>
-                <i class="fa-sharp fa-solid fa-tree"></i><a href="./categories pages/Wood.html">Wood</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-network-wired"></i>
-                <a href="./categories pages/Wood.html">Recycling machines </a>
-              </li>
-              <li>
-                <i class="fa-solid fa-champagne-glasses"></i>
-                <a href="./categories pages/Glass.html">Glass</a>
-              </li>
-              <li>
-                <i class="fa-sharp fa-solid fa-shirt"></i><a href="./categories pages/Cloth.html">Cloth and Textile</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-dna"></i>
-                <a href="./categories pages/Organic.html">Organic</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-wand-magic-sparkles"></i><a href="./categories pages/Others.html">Others</a>
-              </li>
-            </ul>
-            <ul class="prob">
-              <li>Help and setting</li>
-              <li><i class="fa-sharp fa-solid fa-newspaper"></i><a target="blank"
-                  href="./recycle/articlesAdmin.html">Blog</a></li>
-              <li><i class="fa-sharp fa-solid fa-address-card"></i><a href="./contactUs.html" target="blank"> Contact
-                  Us</a></li>
-            </ul>
+              <ul class="prob">
+                <li>categories</li>
+                <li>
+                  <i class="fa-sharp fa-solid fa-book"></i>
+                  <a href="{{url('papaer',['course_id' => 'Paper'])}}"> Paper </a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-vial"></i>
+                  <a href="{{url('papaer',['course_id' => 'chimical substances'])}}"> chimical substances </a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-flask"></i>
+                  <a href="{{url('papaer',['course_id' => 'Plastic'])}}">plastic</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-hammer"></i>
+                  <a href="{{url('papaer',['course_id' => 'Metal'])}}">Metal </a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-laptop"></i><a href="{{url('papaer',['course_id' => 'Electronics'])}}">Electronics </a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-filter"></i><a href="{{url('papaer',['course_id' => 'Rubber'])}}">Rubber</a>
+                </li>
+                <li>
+                  <i class="fa-sharp fa-solid fa-tree"></i><a href="{{url('papaer',['course_id' => 'Wood'])}}">Wood</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-network-wired"></i>
+                  <a href="{{url('papaer',['course_id' => 'Recycling machines'])}}">Recycling machines </a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-champagne-glasses"></i>
+                  <a href="{{url('papaer',['course_id' => 'Glass'])}}">Glass</a>
+                </li>
+                <li>
+                  <i class="fa-sharp fa-solid fa-shirt"></i><a href="{{url('papaer',['course_id' => 'Cloth and Textile'])}}">Cloth and Textile</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-dna"></i>
+                  <a href="{{url('papaer',['course_id' => 'Organic'])}}">Organic</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-wand-magic-sparkles"></i><a href="{{url('papaer',['course_id' => 'Others'])}}">Others</a>
+                </li>
+              </ul>
+              <ul class="prob">
+                <li>Help and setting</li>
+                <li><i class="fa-sharp fa-solid fa-newspaper"></i><a target="blank"
+                    href="{{route('artcile.index')}}">Blog</a></li>
+                <li><i class="fa-sharp fa-solid fa-address-card"></i><a href="{{Url('/contactus')}}" target="blank"> Contact
+                    Us</a></li>
+              </ul>
           </div>
         </div>
       </div>
-      <ul class="recomendation" id="recomendation">
+      <ul class="recomendation" id="recomendation" style="display: None">
         <h2 id="adressLis"><i id="adressLis" class="fa-solid fa-sliders"></i>Filters</h2>
         <div class="search">
           <input id="Search" type="text" placeholder="Search" />
