@@ -8,16 +8,18 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
       
   <link rel="stylesheet" href="{{asset('fontawesome-free-6.4.0-web\css\all.min.css')}}">
-
+  <link rel="stylesheet" href="{{asset('css/all.min.css')}}" />
   <link rel="stylesheet" href="{{asset('css/all.css')}}" />
+  <link rel="stylesheet" href="{{asset('css/style.css')}}" />
+  <link rel="stylesheet" href="{{asset('css/regular.css')}}" />
  
 
   <title>New announce</title>
 </head>
 
 <body>
-  <form method="POST" action="{{route('card.store')}}" enctype="multipart/form-data">
-    @csrf
+
+    
     <section class="navabr">
   <nav class="nav">
     <div class="container">
@@ -555,8 +557,9 @@ if (!event.target.matches('.dropbtn')) {
  
   </section>
   <script src="{{asset('js/newAno.js')}}" defer></script>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-</form>
+
 </body>
 
 </html>
