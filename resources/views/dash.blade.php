@@ -17,15 +17,73 @@
 </head>
 
 <body>
+  <script>
+    function myFunction() {
+      if (document.getElementById("myDropdown").style.display === "none"){
+document.getElementById("myDropdown").style.display = 'block';}
+else {
+document.getElementById("myDropdown").style.display = 'none';}
+
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+if (!event.target.matches('.dropbtn')) {
+var dropdowns = document.getElementsByClassName("dropdown-content");
+var i;
+for (i = 0; i < dropdowns.length; i++) {
+var openDropdown = dropdowns[i];
+if (openDropdown.classList.contains('show')) {
+  openDropdown.classList.remove('show');
+}
+}
+}}
+
+function myFunction1() {
+      if (document.getElementById("myDropdown1").style.display === "none"){
+document.getElementById("myDropdown1").style.display = 'block';}
+else {
+document.getElementById("myDropdown1").style.display = 'none';}
+
+}
+function myFunction2() {
+      if (document.getElementById("myDropdown1").style.display === "block"){
+document.getElementById("myDropdown1").style.display = 'none';}
+else {
+document.getElementById("myDropdown1").style.display = 'block';}
+
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+if (!event.target.matches('.drpbttn')) {
+var dropdowns = document.getElementsByClassName("doouma");
+var i;
+for (i = 0; i < dropdowns.length; i++) {
+var openDropdown = dropdowns[i];
+if (openDropdown.classList.contains('show')) {
+  openDropdown.classList.remove('show');
+}
+}
+}
+
+} 
+
+
+
+</script>
+  <div class="scrollUp">
+    <i class="fa-solid fa-up-long"></i>
+  </div>
   <section class="navabr">
     <nav class="nav">
       <div class="container">
         <div class="logo">
           <i class="fa-solid fa-bars" id="fa-bars"></i>
           <a href="{{url('')}}"><img src="./Imeges/Brecycler2 Chosen-02 (1).png" alt="" /></a>
-  
+
         </div>
-        <form method="POST" action="{{ route('search.results') }}" class="dooum">
+        <form method="POST" action="{{ route('search.results') }}"  class="dooum">
           @csrf
         <div class="search">
           <input id="Search" type="text" name="query" placeholder="Search" />
@@ -34,13 +92,16 @@
           </button>
         </div>
         </form>
+      
+        
         <div class="left-Icons">
-          <i id="fa-magnifying-glass" class="fa-sharp fa-solid fa-magnifying-glass"></i>
+         
+          <a  onClick="myFunction1()" class="drpbttn"> <i id="fa-magnifying-glass"   class="fa-sharp fa-solid fa-magnifying-glass"></i></a>
           <a href="{{route('card.create')}}"> <i class="fa-solid fa-plus"></i></a>
           <!-- <i class="fa-solid fa-cart-shopping"></i> -->
          
           @if (Auth::check())
-  
+
           <a onClick="myFunction()"  class="dropbtn" style="color: black">{{ Auth::user()->name }} <i class="fa-sharp fa-solid fa-caret-down"></i></a>
           <div style="display: none;" id="myDropdown" class="dropdown-content">
             @if (auth()->user()->isAdmin)
@@ -68,24 +129,24 @@
       <i onClick="myFunction()" class="fa-solid fa-user"></i>
       @else
     
-  
+
       <div id="myDropdown" class="dropdown-content">
+
   
-  
-  
+
           <a href="{{ route('login') }}">login</a>
           <a href="{{ route('register') }}">Register</a>
           
         </div>
           
-  
+
           @if (Route::has('register'))
           <i onClick="myFunction()" class="fa-solid fa-user"></i>
-  
+
           <div id="myDropdown" class="dropdown-content">
-  
+
       
-  
+
               <a href="{{ route('login') }}">login</a>
               <a href="{{ route('register') }}">Register</a>
              
@@ -93,12 +154,44 @@
           @endif
       @endauth
   </div>
-  @endif
+@endif
   
   </a>
       
       @endif
-          
+      <form method="POST" style="display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px;
+      z-index: 1;
+      width: 93%;
+      top: 1%;
+      right: 6%;" action="{{ route('search.results') }}" id="myDropdown1" class="doouma">
+        @csrf
+      <div class="search">
+        <a  onClick="myFunction2()" > <i class="fa-solid fa-xmark" style="font-size: 26px;"></i></a>
+        <input id="Search" type="text" name="query" placeholder="Search" style="    width: 80%;
+        background-color: white;
+        outline: none;
+        caret-color: var(--mainColor);
+        border: none;
+        font-size: 20px;
+        padding-left: 12px;
+        height: 70px;" />
+        <button type="submit" style="        position: absolute;
+        width: 20%;
+        height: 70px;
+        transform: translateY(-50%);
+        transition: var(--mainTrantion);
+        border: none;
+        color: white;
+        background-color: var(--mainColor);
+        top: 50%;" >
+          <i class="fa-sharp fa-solid fa-magnifying-glass" style="    font-size: 18px;
+        "></i>
+        </button>
+      </div>
+      </form>
          
           <script>
           function myFunction() {
@@ -106,11 +199,11 @@
   document.getElementById("myDropdown").style.display = 'block';}
   else {
     document.getElementById("myDropdown").style.display = 'none';}
-  
-  }
-  
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
+ 
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
@@ -121,7 +214,7 @@
       }
     }
   }
-  } </script>
+} </script>
         </div>
       </div>
       <!-- start list -->
@@ -139,7 +232,7 @@
                   Mode </a>
               </li>
               <li>
-                <i class="fa-solid fa-user-plus"></i> <a href="{{ route('register') }}">register</a>
+                <i class="fa-solid fa-user-plus"></i> <a href="./Sign up.html">register</a>
               </li>
               <li>
                 <i class="fa-solid fa-plus"></i>
@@ -202,17 +295,126 @@
                   <i class="fa-solid fa-wand-magic-sparkles"></i><a href="{{url('papaer',['course_id' => 'Others'])}}">Others</a>
                 </li>
               </ul>
-            <ul class="prob">
-              <li>Help and setting</li>
-              <li><i class="fa-sharp fa-solid fa-newspaper"></i><a target="blank"
-                  href="{{route('artcile.index')}}">Blog</a></li>
-              <li><i class="fa-sharp fa-solid fa-address-card"></i><a href="{{Url('/contactus')}}" target="blank"> Contact
-                  Us</a></li>
-            </ul>
+              <ul class="prob">
+                <li>Help and setting</li>
+                <li><i class="fa-sharp fa-solid fa-newspaper"></i><a target="blank"
+                    href="{{route('artcile.index')}}">Blog</a></li>
+                <li><i class="fa-sharp fa-solid fa-address-card"></i><a href="{{Url('/contactus')}}" target="blank"> Contact
+                    Us</a></li>
+              </ul>
           </div>
         </div>
       </div>
-      
+      <ul class="recomendation" id="recomendation" style="display: None">
+        <h2 id="adressLis"><i id="adressLis" class="fa-solid fa-sliders"></i>Filters</h2>
+        <div class="search">
+          <input id="Search" type="text" placeholder="Search" />
+          <button>
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+            <p class="do-not">Search</p>
+          </button>
+        </div>
+        <form action="" class="do-not">
+          <div class="filter do" id="filter">
+            <h5 class="do-not">Adress</h5>
+            <div class="header do" id="header" data-on="1">
+              <p class="do-not" data-on="1">country</p>
+              <i id="adressLis" data-on="1" class="fa-sharp fa-solid fa-chevron-down" data-on="1"></i>
+            </div>
+            <div class="adress do" id="adress">
+              <label for="searchIn" data-on="1">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </label>
+              <input data-on="1" class="SearchInput do do-not" type="text" placeholder="Search">
+              <ul class="counrty do-not do countries" data-on="1">
+              </ul>
+            </div>
+          </div>
+          <div class="filter do" id="filter">
+            <h5 class="do-not">Categories</h5>
+            <div class="header do" id="header" data-on="2">
+              <p class="do-not">Categories</p>
+              <i id="adressLis" class="fa-sharp fa-solid fa-chevron-down" data-on="2"></i>
+            </div>
+            <div class="adress do" id="adress">
+              <label for="searchIn" data-on="2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </label>
+              <input id="searchIn" data-on="2" class="SearchInput do do-not" type="text" placeholder="Search">
+              <ul class="counrty do-not do" data-on="2">
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-not do">Paper</label>
+                </div>
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-not do">chimical substances</label>
+                </div>
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-not do">Metal</label>
+                </div>
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" class="do-not do" name="scales">
+                  <label for="scales" class="do-not do">Electronics</label>
+                </div>
+                <div class="check do do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-not do">Wood</label>
+                </div>
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-no dot">Rubber</label>
+                </div>
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-not do">Recycling machines</label>
+                </div>
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-not do">Cloth and Textile</label>
+                </div>
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-not do">Glass</label>
+                </div>
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-not do">Organic</label>
+                </div>
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-not do">Plastic</label>
+                </div>
+                <div class="check do-not do" data-on="2">
+                  <input type="checkbox" id="scales" name="scales" class="do">
+                  <label for="scales" class="do-not do">Others</label>
+                </div>
+
+
+
+              </ul>
+            </div>
+          </div>
+          <div class="filter do" id="filter">
+            <h5 class="do-not">Offer type</h5>
+            <div class="header do" id="header" data-on="3">
+              <p class="do-not">Offer type</p>
+              <i id="adressLis" class="fa-sharp fa-solid fa-chevron-down" data-on="3"></i>
+            </div>
+            <div class="adress" id="adress">
+              <ul class="counrty type-of-offer" data-on="3">
+                <li class="do-not ">Buy</li>
+                <li class="do-not ">Sale</li>
+              </ul>
+            </div>
+          </div>
+          <div class="btn do-not">
+            <button class="cancel">cancel</button>
+            <button class="Apply">Apply</button>
+          </div>
+        </form>
+      </ul>
     </nav>
   </section>
     <div class="container" style="margin-top: 150px">
