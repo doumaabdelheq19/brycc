@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('fontawesome-free-6.4.0-web\css\all.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/dash.css')}}" />
 
-    <title>Brycl dashboard</title>
+    <title>Admin dashboard</title>
 </head>
 
 <body>
