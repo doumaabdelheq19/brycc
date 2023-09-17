@@ -22,7 +22,7 @@
     rel="stylesheet" />
   <link rel="icon" href="./Imeges/recycle-symbol.png" />
 
-  <title>E-commerce</title>
+  <title>Brecycler</title>
 </head>
 
 <body>
